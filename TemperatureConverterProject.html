@@ -1,0 +1,104 @@
+
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter Progect</title>
+  <!-- 2.Styling input -->
+  <style>
+      /* select Body tag and style */
+      body{
+          padding: 50px 100px;
+      }
+      h1{
+          text-align: center;
+      }
+      /* select container  */
+      #container{
+          text-align: center;
+          /* background-color: #1abc9c; */
+          background-color: aqua;
+          padding: 50px;
+      }
+      /* select div1 & div2 */
+      .input-div{
+          display: inline-block;
+      }
+      .inp{
+          padding: 5px 10px;
+          margin: 10px;
+          font-size: 30px;
+          font-weight: bold;
+          width: 250px;
+          text-align: center;
+      }
+      label{
+          font-size: 20px;
+          color: black;
+      }
+      p{
+          text-align: center;
+          color: blue;
+          font-weight: bold;
+      }
+
+  </style>
+
+
+</head>
+<body>
+    <!-- first create this thing -->
+         <!-- Temperture Converture Project Using Html, & js -->
+         <h1>This is a Project of Tenperature Converter </h1>
+         <!-- first input div -->
+         <div id="container">
+             <!-- div1 -->
+             <div class="input-div">   
+                   <label>Celsius</label> <br>
+                   <input type="number" value="0" id="cel" class="inp">
+             </div>
+             <!-- div2 -->
+             <div class="input-div">
+                    <label>Fahrehenit</label> <br>
+                    <input type="number" value="32" id="fah" class="inp">
+             </div>
+         </div>
+         <hr>
+         <p> <marquee behavior="alternate"> Thsi Project Is Made By Md Intezar Alam</p></marquee>
+         <!-- third usng JavaScript to handale the Projects -->
+         <script>
+                           let cel = document.getElementById("cel");
+                           let fah = document.getElementById("fah");
+
+                           //Add Events Listener in cel, make an anonimas Function
+
+                           cel.addEventListener('input', function(){
+                           let c = this.value;
+                           let f = (c * 9/5) + 32;
+                           //check if that is integer or not
+                            if(!Number.isInteger(f)){
+                                  f = f.toFixed(4);
+                            }
+                           fah.value = f;
+
+                           });
+                            //Add Events Listener in fah, make an anonimas Function
+                           fah.addEventListener('input', function(){
+                               let f = this.value;
+                               let c = 	(f - 32) * 5/9;
+                                  //check if that is integer or not
+                               if(!Number.isInteger(c)){
+                                  c = c.toFixed(4);
+                            }
+                               cel.value = c;
+
+                           });
+
+         </script>
+         <!-- Finaliy We have Cpmpletdn Temperature Converter Project 
+        Using HTML, CSS & JAVASCRIPT Lnguage -->
+</body>
+</html>
